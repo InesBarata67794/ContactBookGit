@@ -2,6 +2,8 @@ package contactBook;
 
 import contactBook.Contact;
 
+import java.util.Arrays;
+
 public class ContactBook {
     static final int DEFAULT_SIZE = 100;
 
@@ -105,6 +107,18 @@ public class ContactBook {
     //Pre: hasNext()
     public Contact next() {
         return contacts[currentContact++];
+    }
+
+    public Boolean areThereDuplicates(){
+        Arrays.sort(contacts);
+        boolean duplicate = false;
+        int i = 0;
+        while(!duplicate && i < counter){
+            if(contacts[i].getPhone()==contacts[i+1].getPhone()){
+                duplicate = true;
+            }
+        }
+        return duplicate;
     }
 
 }
