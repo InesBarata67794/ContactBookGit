@@ -35,4 +35,15 @@ public class Contact {
     public boolean equals(Contact otherContact) {
         return name.equals(otherContact.getName());
     }
+    public int compareTo(Contact otherContact) {
+        int result = this.getPhone() - otherContact.getPhone();
+        if (result<0){
+            return 1;
+        }else if (result>0){
+            return -1;
+        }else{
+            return 0;
+        }
+
+    }
 }
