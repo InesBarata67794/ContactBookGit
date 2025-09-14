@@ -1,6 +1,6 @@
 package contactBook;
 
-public class Contact {
+public class Contact implements Comparable<Contact>{
     private String name;
     private int phone;
     private String email;
