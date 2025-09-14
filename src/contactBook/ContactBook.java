@@ -110,12 +110,16 @@ public class ContactBook {
     }
 
     public Boolean areThereDuplicates(){
-        Arrays.sort(contacts);
+        Contact[] contacts2 = contacts.clone();
         boolean duplicate = false;
-        int i = 0;
-        while(!duplicate && i < counter){
-            if(contacts[i].getPhone()==contacts[i+1].getPhone()){
-                duplicate = true;
+        if(contacts2.length > 0) {
+            Arrays.sort(contacts2);
+            int i = 0;
+            while (!duplicate && i < counter) {
+                if (contacts2[i].getPhone() == contacts2[i + 1].getPhone()) {
+                    duplicate = true;
+                }
+                i++;
             }
         }
         return duplicate;
