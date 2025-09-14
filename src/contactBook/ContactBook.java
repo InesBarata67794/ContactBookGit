@@ -112,10 +112,10 @@ public class ContactBook {
     public Boolean areThereDuplicates(){
         Contact[] contacts2 = contacts.clone();
         boolean duplicate = false;
-        if(contacts2.length > 0) {
-            Arrays.sort(contacts2);
+        if(counter > 0) {
+            Arrays.sort(contacts2,0,counter);
             int i = 0;
-            while (!duplicate && i < counter) {
+            while (!duplicate && i < counter - 1) {
                 if (contacts2[i].getPhone() == contacts2[i + 1].getPhone()) {
                     duplicate = true;
                 }

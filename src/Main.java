@@ -25,7 +25,7 @@ public class Main {
     public static final String CONTACT_REMOVED = "contactBook.Contact removed.";
     public static final String CONTACT_UPDATED = "contactBook.Contact updated.";
     public static final String BOOK_EMPTY = "contactBook.Contact book empty.";
-    public static final String ALL_CONTACTS_DIFFERENT = "All contacts have different phone numbers";
+    public static final String ALL_CONTACTS_DIFFERENT = "All contacts have different phone numbers.";
     public static final String EQUAL_CONTACTS = "There are contacts that share phone numbers.";
     public static final String PHONE_NOT_EXISTS = "Phone number does not exist.";
     public static final String QUIT_MSG = "Goodbye!";
