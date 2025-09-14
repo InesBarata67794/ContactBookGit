@@ -59,6 +59,12 @@ public class Main {
                 case LIST_CONTACTS:
                     listAllContacts(cBook);
                     break;
+                case GET_NUMBER:
+                    getPhoneByNumber(in,cBook);
+                    break;
+                case EQUAL_PHONES:
+                    verifyEqualContacts(cBook);
+                    break;
                 default:
                     System.out.println(COMMAND_ERROR);
             }
@@ -129,6 +135,25 @@ public class Main {
             System.out.println(CONTACT_UPDATED);
         }
         else System.out.println(NAME_NOT_EXIST);
+    }
+
+    private static void getPhoneByNumber(Scanner in, ContactBook cBook) {
+        int phone = in.nextInt(); in.nextLine();
+        Contact contact = cBook.getContact(phone);
+        if(contact == null){
+            System.out.println(PHONE_NOT_EXISTS);
+        }else{
+            System.out.println(contact.getName());
+        }
+    }
+
+    private static void verifyEqualContacts (ContactBook cBook) {
+        boolean exists = cBook.areThereDuplicates();
+        if(exists){
+            System.out.println(EQUAL_CONTACTS);
+        }else{
+            System.out.println(ALL_CONTACTS_DIFFERENT);
+        }
     }
 
     private static void setEmail(Scanner in, ContactBook cBook) {
